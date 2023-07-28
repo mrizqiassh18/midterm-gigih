@@ -26,7 +26,9 @@ Cara Menjalankan Aplikasinya
 	d. Pada Option, pilih "Export to Self-Contained File"
 	e. Pilih file  pada folder database yang sudah saya buat
 	f. Start import, dan tunggu hingga selesai
-	g. Jika sudah
+	g. Jika sudah, bisa kembali ke program utama
 2. Buka app.js
 3. Pada terminal ketikan npm install
-4. 
+4. Pada app.js ubah connection sesuai dengan (host, user, password) mysql pada komputer anda
+5. Ketikan pada terminal nodemon app.js
+6. Anda sudah bisa mengakses aplikasi yang saya buat pada localhost:3000
