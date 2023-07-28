@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lading Page</title>
+    <link rel="stylesheet" href="/css/landing-page.css">
+</head>
+<body>
+    <div class="container">
+        <div class="video-list">
+            <h1>Di bawah ini adalah contoh thumbnail yang dapat diklik, klik lah salah satu dari thumbnail di bawah ini</h1>
+            <% videos.forEach(video => { %> 
+            <div class="video">
+                <a href="/video-details/<%= video.id %>">
+                    <img src="<%= video.url %>" alt="thumbnail">
+                </a>
+            </div>
+        <%});%>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Details</title>
+    <link rel="stylesheet" href="/css/video-details.css">
+</head>
+<body>
+    <h1>Ini adalah contoh dari halaman detail pada video (gambar hanya sebagai contoh tata letak)</h1>
+
+    <div class="top-img">
+        <img src="<%= video.url %>" alt="Thumbnail">
+    </div>
+
+    <h2 style="text-align: center;">Di bawah ini adalah contoh product list</h2>
+        <div class="product-list">
+            <% product.forEach(item => { %>
+                <div class="product">
+                    <img src="<%= item.product_img %>" alt="img">
+                    <h3><%= item.title %></h3>
+                    <p>Harga : Rp.<%= item.price %></p>
+                    <a href="<%= item.link_product %>">Link Product</a>
+                </div>
+            <%});%>
+        </div>
+
+    <h2 style="text-align: center;">Di bawah ini adalah contoh comment section dan anda dapat melakukan komentar</h2>
+    <div class="comment-flex">
+    <!--Tampilkan Komentar-->
+        <div class="comments-container">
+            <div class="comments">
+                    <h2 class="judul">Semua Komentar</h2>
+                    <% comments.forEach(comment => { %>
+                        <div class="comments-list">
+                            <p class="username"><%=comment.username%></p>
+                            <p class="comments-detail"><%=comment.comment%></p>
+                        </div>
+                    <%})%>
+            </div>
+        </div>
+
+        <!--Membuat Commentar-->
+        <div class="add-comment-container">
+            <div class="add-comment">
+                <form action="/comments" method="post">
+                    <h2 class="judul">Berikan komentar</h2>
+                    <input type="hidden" name="video_id" value="<%=video.id%>">
+                    <input type="text" name="username" placeholder="Masukan Nama Anda...">
+                    <div class="flex-comment">
+                        <textarea name="comment" placeholder="Masukan Komentar Anda..."></textarea>
+                        <input type="submit" value="Kirim">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
